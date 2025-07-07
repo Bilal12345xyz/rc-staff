@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Recrutement Staff Liberty RP</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .summer-card {
+    background-image: url('https://i.imgur.com/WCkUuA6.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    width: 100%;
+  }
+  .overlay {
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .palm-icon {
+    position: absolute;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  .title-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  label {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 0.6rem 0.8rem;
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    resize: vertical;
+    font-family: 'Poppins', sans-serif;
+  }
+  button {
+    margin-top: 2rem;
+    background: #d946ef; /* rose violet */
+    color: white;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: none;
+  }
+  button:hover {
+    background: #c026d3;
+  }
+  .overlay::-webkit-scrollbar {
+    width: 8px;
+  }
+  .overlay::-webkit-scrollbar-thumb {
+    background-color: #d946ef88;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="summer-card relative">
+    <!-- Décorations -->
+    <i class="palm-icon fa-solid fa-palmtree text-7xl text-amber-800 top-8 left-8"></i>
+    <i class="palm-icon fa-solid fa-palmtree text-6xl text-amber-700 bottom-12 right-8"></i>
+    <i class="palm-icon fa-solid fa-sun text-5xl text-yellow-400 top-12 right-16"></i>
+    <i class="palm-icon fa-solid fa-umbrella-beach text-4xl text-blue-500 bottom-20 left-20"></i>
+    <i class="palm-icon fa-solid fa-water text-3xl text-blue-300 bottom-8 right-24"></i>
+    <i class="palm-icon fa-solid fa-fish text-2xl text-orange-500 top-24 left-24"></i>
+
+    <div class="overlay z-10">
+      <h1
+        class="title-text text-3xl md:text-4xl font-bold text-center text-purple-800 mb-8"
+      >
+        RECRUTEMENT STAFF<br />LIBERTY RP
+      </h1>
+
+      <form id="staffForm" class="space-y-4" autocomplete="off">
+        <label for="conditions">Respectes-tu les conditions Staff ? *</label>
+        <select id="conditions" name="conditions" required>
+          <option value="" disabled selected>Choisis une option</option>
+          <option value="Oui">Oui</option>
+          <option value="Non">Non</option>
+        </select>
+
+        <label for="poste">Par quel poste es-tu intéressé dans l'équipe ? *</label>
+        <input type="text" id="poste" name="poste" placeholder="Ex: Modérateur" required />
+
+        <label for="pseudo_discord">Pseudo Discord (exemple : LibertyRP) *</label>
+        <input type="text" id="pseudo_discord" name="pseudo_discord" placeholder="LibertyRP" required />
+
+        <label for="discord_id">ID Discord (exemple : 1162647790195843193) *</label>
+        <input type="text" id="discord_id" name="discord_id" placeholder="1162647790195843193" required />
+
+        <label for="prenom">Prénom *</label>
+        <input type="text" id="prenom" name="prenom" required />
+
+        <label for="age">Âge (Minimum 15 ans ! Possible en dessous si maturité) *</label>
+        <input type="number" id="age" name="age" min="10" max="100" placeholder="15" required />
+
+        <label for="hours_fivem">Combien avez-vous d'heures FiveM ? (Minimum 200 H) *</label>
+        <input type="number" id="hours_fivem" name="hours_fivem" min="0" placeholder="200" required />
+
+        <label for="disponibilites_vacances">Vos disponibilités vacances (Détaillés !) *</label>
+        <textarea id="disponibilites_vacances" name="disponibilites_vacances" rows="3" required></textarea>
+
+        <label for="disponibilites_scolaires">Vos disponibilités scolaires (Détaillés !) *</label>
+        <textarea id="disponibilites_scolaires" name="disponibilites_scolaires" rows="3" required></textarea>
+
+        <label for="motivation">Vos motivations (Minimum 4 lignes) *</label>
+        <textarea
+          id="motivation"
+          name="motivation"
+          rows="5"
+          placeholder="Expliquez pourquoi vous voulez rejoindre l'équipe..."
+          required
+        ></textarea>
+
+        <label for="experience_staff">As-tu déjà eu une expérience en tant que staff ? Si oui, où et quel poste ? *</label>
+        <textarea id="experience_staff" name="experience_staff" rows="3" required></textarea>
+
+        <label for="raison_rejoindre">Pourquoi souhaites-tu rejoindre l’équipe staff de Liberty RP ? Vos ambitions ? *</label>
+        <textarea id="raison_rejoindre" name="raison_rejoindre" rows="3" required></textarea>
+
+        <label for="hierarchie">Le principe de hiérarchie vous dérange t-il (avoir des supérieurs) ? *</label>
+        <select id="hierarchie" name="hierarchie" required>
+          <option value="" disabled selected>Choisis une option</option>
+          <option value="Oui">Oui</option>
+          <option value="Non">Non</option>
+        </select>
+
+        <label for="pourquoi_toi">Pourquoi toi et pas un autre ? (Merci de ne pas utiliser Google ou ChatGPT) *</label>
+        <textarea id="pourquoi_toi" name="pourquoi_toi" rows="4" required></textarea>
+
+        <label for="qualites">Qualités (Minimum 3) *</label>
+        <textarea id="qualites" name="qualites" rows="3" placeholder="Exemple: Patience, Écoute, Sérieux" required></textarea>
+
+        <label for="defauts">Défauts (Minimum 3) *</label>
+        <textarea id="defauts" name="defauts" rows="3" placeholder="Exemple: Impulsif, Timide, Perfectionniste" required></textarea>
+
+        <label for="rp_cote">Es-tu prêt à mettre de côté le RP si tu es accepté en tant que staff ? *</label>
+        <select id="rp_cote" name="rp_cote" required>
+          <option value="" disabled selected>Choisis une option</option>
+          <option value="Oui">Oui</option>
+          <option value="Non">Non</option>
+        </select>
+
+        <label for="message_sup">Avez-vous quelque chose à nous transmettre ?</label>
+        <textarea id="message_sup" name="message_sup" rows="3" placeholder="Optionnel"></textarea>
+
+        <button type="submit">Envoyer la candidature</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const webhookURL = "https://discord.com/api/webhooks/1391913578277240862/pSJgMrmkaA9ujOHqUp4BH_Q68wySquChBdSGq2Um2Zp-IupWqkxsCIJiP6jPLr6utefP";
+
+    function countNonEmptyLines(text) {
+      return text.split('\n').filter(line => line.trim().length > 0).length;
+    }
+
+    function countItemsSeparatedByComma(text) {
+      return text.split(',').filter(item => item.trim().length > 0).length;
+    }
+
+    document.getElementById('staffForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+
+      const data = {
+        conditions: form.conditions.value.trim(),
+        poste: form.poste.value.trim(),
+        pseudo_discord: form.pseudo_discord.value.trim(),
+        discord_id: form.discord_id.value.trim(),
+        prenom: form.prenom.value.trim(),
+        age: Number(form.age.value),
+        hours_fivem: Number(form.hours_fivem.value),
+        disponibilites_vacances: form.disponibilites_vacances.value.trim(),
+        disponibilites_scolaires: form.disponibilites_scolaires.value.trim(),
+        motivation: form.motivation.value.trim(),
+        experience_staff: form.experience_staff.value.trim(),
+        raison_rejoindre: form.raison_rejoindre.value.trim(),
+        hierarchie: form.hierarchie.value.trim(),
+        pourquoi_toi: form.pourquoi_toi.value.trim(),
+        qualites: form.qualites.value.trim(),
+        defauts: form.defauts.value.trim(),
+        rp_cote: form.rp_cote.value.trim(),
+        message_sup: form.message_sup.value.trim(),
+      };
+
+      // Validation
+      if (data.conditions.toLowerCase() !== "oui") {
+        alert("Tu dois respecter les conditions staff pour postuler.");
+        return;
+      }
+
+      if (data.age < 15) {
+        // On accepte moins que 15 si maturité, donc on laisse passer mais on peut avertir
+        if (!confirm("Tu as moins de 15 ans, es-tu sûr de ta maturité pour postuler ?")) {
+          return;
+        }
+      }
+
+      if (isNaN(data.hours_fivem) || data.hours_fivem < 200) {
+        alert("Il faut un minimum de 200 heures de jeu FiveM.");
+        return;
+      }
+
+      if (countNonEmptyLines(data.motivation) < 4) {
+        alert("Les motivations doivent faire minimum 4 lignes.");
+        return;
+      }
+
+      if (countItemsSeparatedByComma(data.qualites) < 3 && data.qualites.split('\n').filter(l=>l.trim().length>0).length < 3) {
+        alert("Merci de mettre au moins 3 qualités (séparées par des virgules ou sur plusieurs lignes).");
+        return;
+      }
+
+      if (countItemsSeparatedByComma(data.defauts) < 3 && data.defauts.split('\n').filter(l=>l.trim().length>0).length < 3) {
+        alert("Merci de mettre au moins 3 défauts (séparés par des virgules ou sur plusieurs lignes).");
+        return;
+      }
+
+      // Préparation du message embed Discord
+      const embed = {
+        title: "Nouvelle candidature staff",
+        color: 0xd946ef, // rose violet
+        fields: [
+          { name: "Respecte les conditions Staff ?", value: data.conditions, inline: true },
+          { name: "Poste demandé", value: data.poste, inline: true },
+          { name: "Pseudo Discord", value: data.pseudo_discord, inline: true },
+          { name: "ID Discord", value: data.discord_id, inline: true },
+          { name: "Prénom", value: data.prenom, inline: true },
+          { name: "Âge", value: data.age.toString(), inline: true },
+          { name: "Heures FiveM", value: data.hours_fivem.toString(), inline: true },
+          { name: "Disponibilités vacances", value: data.disponibilites_vacances },
+          { name: "Disponibilités scolaires", value: data.disponibilites_scolaires },
+          { name: "Motivations", value: data.motivation },
+          { name: "Expérience staff", value: data.experience_staff },
+          { name: "Pourquoi rejoindre Liberty RP ?", value: data.raison_rejoindre },
+          { name: "Hiérarchie dérange ?", value: data.hierarchie, inline: true },
+          { name: "Pourquoi toi et pas un autre ?", value: data.pourquoi_toi },
+          { name: "Qualités", value: data.qualites },
+          { name: "Défauts", value: data.defauts },
+          { name: "Prêt à mettre de côté le RP ?", value: data.rp_cote, inline: true },
+          { name: "Message supplémentaire", value: data.message_sup || "Aucun" }
+        ],
+        timestamp: new Date().toISOString(),
+      };
+
+      // Envoi webhook Discord
+      try {
+        const response = await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ embeds: [embed] }),
+        });
+
+        if (response.ok) {
+          alert("Candidature envoyée avec succès !");
+          form.reset();
+        } else {
+          alert("Erreur lors de l'envoi, veuillez réessayer plus tard.");
+          console.error("Erreur webhook Discord :", response.statusText);
+        }
+      } catch (error) {
+        alert("Erreur réseau lors de l'envoi.");
+        console.error("Erreur fetch webhook :", error);
+      }
+    });
+  </script>
+</body>
+</html>
